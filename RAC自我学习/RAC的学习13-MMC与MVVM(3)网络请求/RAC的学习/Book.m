@@ -13,7 +13,7 @@
     
     Book *book = [[self alloc] init];
     book.title = dict[@"title"];
-    book.name = dict[@"name"];
+    book.subtitle = dict[@"subtitle"];
     return book;
 }
 @end

@@ -18,11 +18,11 @@
  视图模型(VM):处理展示的业务逻辑，包括按钮的点击，数据的请求和解析等等。
  */
 #import "ViewController.h"
-//#import <ReactiveObjC/ReactiveObjC.h>
 #import "RequestModel.h"
-@interface ViewController ()
+#import "Book.h"
+@interface ViewController ()<UITableViewDataSource>
 @property (nonatomic,strong) RequestModel *requestModel;
-
+@property (nonatomic,weak) UITableView *tableView;
 @end
 
 
@@ -34,6 +34,9 @@
  4.请求数据成功，应该把字典转换成模型，保存到视图模型中，控制器想用就直接从视图模型中获取。
  5.假设控制器想展示内容到tableView，直接让视图模型成为tableView的数据源，把所有的业务逻辑交给视图模型去做，这样控制器的代码就非常少了。
 
+ 思想:
+ 1. VM处理的应该是View上要显示的数据，保证View能直接显示，不应该在VM中出现View
+ 2. 数据驱动视图的思想
  */
 // ReactiveCocoa + MVVM 实战一：登录界面
 @implementation ViewController
@@ -45,17 +48,40 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    RACSignal *signal = [self.requestModel.requestCommand execute:nil];
+    // 创建tableView
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
+    self.tableView = tableView;
     
-    [signal subscribeNext:^(id  _Nullable x) {
-    //模型数据
-    //获取模型数据
-        NSLog(@"%@",x);
+    
+    
+    //执行数据请求命令
+    [self.requestModel.requestCommand execute:nil];
+    
+    //监听数据的改变,驱动视图
+    [RACObserve(self.requestModel, models) subscribeNext:^(id  _Nullable x) {
+         [self.tableView reloadData];
     }];
-   
 }
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.requestModel.models.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    }
     
+    Book *book = self.requestModel.models[indexPath.row];
+    cell.detailTextLabel.text = book.subtitle;
+    cell.textLabel.text = book.title;
+    return cell;
 }
+
 
 @end

@@ -10,6 +10,6 @@
 
 @interface Book : NSObject
 @property (nonatomic,copy) NSString *title;
-@property (nonatomic,copy) NSString *name;
+@property (nonatomic,copy) NSString *subtitle;
 +(instancetype)bookWithDict:(NSDictionary *)dict;
 @end

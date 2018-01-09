@@ -11,6 +11,6 @@
 @interface RequestModel : NSObject
 /*网络请求命令*/
 @property (nonatomic,strong) RACCommand *requestCommand;
-
-
+//模型数组
+@property (nonatomic, strong) NSArray *models;
 @end
