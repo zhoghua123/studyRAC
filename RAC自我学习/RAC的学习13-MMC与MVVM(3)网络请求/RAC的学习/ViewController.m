@@ -55,14 +55,29 @@
     self.tableView = tableView;
     
     
-    
     //执行数据请求命令
-    [self.requestModel.requestCommand execute:nil];
+    [self.requestModel.requestCommand execute:@"CHAAAA"];
+    
+    //监听命令执行过程,弹框提示
+    //skip1的原因是,程序已启动就回调用一次
+    [[self.requestModel.requestCommand.executing skip:1] subscribeNext:^(NSNumber * _Nullable x) {
+        if ([x boolValue] == YES) {
+            //正在执行
+            NSLog(@"请求中");
+            //弹框提示正在登录
+        }else{
+            //执行完成,隐藏弹框
+            NSLog(@"请求完成");
+        }
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"请求失败");
+    }];
     
     //监听数据的改变,驱动视图
     [RACObserve(self.requestModel, models) subscribeNext:^(id  _Nullable x) {
          [self.tableView reloadData];
     }];
+    
 }
 
 #pragma mark - UITableViewDataSource
