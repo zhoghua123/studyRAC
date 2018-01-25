@@ -14,6 +14,12 @@
     Book *book = [[self alloc] init];
     book.title = dict[@"title"];
     book.subtitle = dict[@"subtitle"];
+    book.price = dict[@"price"];
+    book.pubdate = dict[@"pubdate"];
     return book;
+}
+-(NSString *)priceAndPubdate{
+    _priceAndPubdate = [NSString stringWithFormat:@"%@/%@",_price,_pubdate];
+    return _priceAndPubdate;
 }
 @end

@@ -13,7 +13,9 @@
 		302517F91FF0993F000FA9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302517F81FF0993F000FA9D3 /* Assets.xcassets */; };
 		302517FC1FF0993F000FA9D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517FA1FF0993F000FA9D3 /* LaunchScreen.storyboard */; };
 		302517FF1FF0993F000FA9D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 302517FE1FF0993F000FA9D3 /* main.m */; };
-		30757B4E20035D9000337ECB /* RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30757B4D20035D9000337ECB /* RequestModel.m */; };
+		303D42662019CD7100E15C65 /* RequestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 303D42652019CD7100E15C65 /* RequestViewModel.m */; };
+		303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 303D42682019D0EE00E15C65 /* BookViewCell.m */; };
+		303D426B2019D0EE00E15C65 /* BookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303D42692019D0EE00E15C65 /* BookViewCell.xib */; };
 		30757B5120035DA400337ECB /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 30757B5020035DA400337ECB /* Book.m */; };
 		30757B532003624700337ECB /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 30757B522003624700337ECB /* Foundation+Log.m */; };
 		8035B96ADD961A0D47B756B1 /* Pods_RAC___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2AEB05D693A9DEB65A46222 /* Pods_RAC___.framework */; };
@@ -30,8 +32,11 @@
 		302517FB1FF0993F000FA9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302517FD1FF0993F000FA9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		302517FE1FF0993F000FA9D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		30757B4C20035D9000337ECB /* RequestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestModel.h; sourceTree = "<group>"; };
-		30757B4D20035D9000337ECB /* RequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestModel.m; sourceTree = "<group>"; };
+		303D42642019CD7100E15C65 /* RequestViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestViewModel.h; sourceTree = "<group>"; };
+		303D42652019CD7100E15C65 /* RequestViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestViewModel.m; sourceTree = "<group>"; };
+		303D42672019D0EE00E15C65 /* BookViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewCell.h; sourceTree = "<group>"; };
+		303D42682019D0EE00E15C65 /* BookViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewCell.m; sourceTree = "<group>"; };
+		303D42692019D0EE00E15C65 /* BookViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewCell.xib; sourceTree = "<group>"; };
 		30757B4F20035DA400337ECB /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		30757B5020035DA400337ECB /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		30757B522003624700337ECB /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -77,10 +82,13 @@
 				302517F01FF0993F000FA9D3 /* AppDelegate.m */,
 				302517F21FF0993F000FA9D3 /* ViewController.h */,
 				302517F31FF0993F000FA9D3 /* ViewController.m */,
-				30757B4C20035D9000337ECB /* RequestModel.h */,
-				30757B4D20035D9000337ECB /* RequestModel.m */,
+				303D42642019CD7100E15C65 /* RequestViewModel.h */,
+				303D42652019CD7100E15C65 /* RequestViewModel.m */,
 				30757B4F20035DA400337ECB /* Book.h */,
 				30757B5020035DA400337ECB /* Book.m */,
+				303D42672019D0EE00E15C65 /* BookViewCell.h */,
+				303D42682019D0EE00E15C65 /* BookViewCell.m */,
+				303D42692019D0EE00E15C65 /* BookViewCell.xib */,
 				30757B522003624700337ECB /* Foundation+Log.m */,
 				302517F51FF0993F000FA9D3 /* Main.storyboard */,
 				302517F81FF0993F000FA9D3 /* Assets.xcassets */,
@@ -172,6 +180,7 @@
 				302517FC1FF0993F000FA9D3 /* LaunchScreen.storyboard in Resources */,
 				302517F91FF0993F000FA9D3 /* Assets.xcassets in Resources */,
 				302517F71FF0993F000FA9D3 /* Main.storyboard in Resources */,
+				303D426B2019D0EE00E15C65 /* BookViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,11 +240,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				30757B5120035DA400337ECB /* Book.m in Sources */,
+				303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */,
 				302517F41FF0993F000FA9D3 /* ViewController.m in Sources */,
 				302517FF1FF0993F000FA9D3 /* main.m in Sources */,
 				302517F11FF0993F000FA9D3 /* AppDelegate.m in Sources */,
-				30757B4E20035D9000337ECB /* RequestModel.m in Sources */,
 				30757B532003624700337ECB /* Foundation+Log.m in Sources */,
+				303D42662019CD7100E15C65 /* RequestViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

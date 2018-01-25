@@ -17,13 +17,6 @@
  视图+控制器(V):展示内容 + 如何展示
  视图模型(VM):处理展示的业务逻辑，包括按钮的点击，数据的请求和解析等等。
  */
-#import "ViewController.h"
-#import "RequestModel.h"
-#import "Book.h"
-@interface ViewController ()<UITableViewDataSource>
-@property (nonatomic,strong) RequestModel *requestModel;
-@property (nonatomic,weak) UITableView *tableView;
-@end
 
 
 /*
@@ -31,36 +24,60 @@
  1.控制器提供一个视图模型（requesViewModel），处理界面的业务逻辑
  2.VM提供一个命令，处理请求业务逻辑
  3.在创建命令的block中，会把请求包装成一个信号，等请求成功的时候，就会把数据传递出去。
- 4.请求数据成功，应该把字典转换成模型，保存到视图模型中，控制器想用就直接从视图模型中获取。
- 5.假设控制器想展示内容到tableView，直接让视图模型成为tableView的数据源，把所有的业务逻辑交给视图模型去做，这样控制器的代码就非常少了。
-
- 思想:
- 1. VM处理的应该是View上要显示的数据，保证View能直接显示，不应该在VM中出现View
- 2. 数据驱动视图的思想
+ 4.请求数据成功，应该把字典转换成模型，保存到视图模型(VM)中，控制器想用就直接从视图模型(VM)中获取。
+ 5.假设控制器想展示内容到tableView，直接让视图模型(VM)成为tableView的数据源，把所有的业务逻辑交给视图模型(VM)去做，这样控制器的代码就非常少了。
+ 
  */
-// ReactiveCocoa + MVVM 实战一：登录界面
+
+/*
+ MVVM的特点:
+ 1. 控制器C:
+    1. 控制器有一个视图模型(VM)属性,此时是将视图模型作为数据源
+    2. 控制器通过VM执行发送数据请求命令
+    3. 控制器中通过VM监听数据请求的过程
+    4. 控制器中监听VM中数据源属性的改变,从而驱动(刷新)视图
+ 2. VM(RequestViewModel):
+    1. 提供一个数据请求命令,用于执行数据请求
+    2. 拥有一个数据源属性(把MVC控制器中的数据源搬到这里来)
+    3. 数据处理,发送网络请求更新模型,搬到了这里
+ 3. View与MVC 一样仍然不变
+ 4. Model与MVC 一样仍然不变
+ 
+ 注意:
+ 1. 不应该在VM中出现View
+ 2. 用RAC实现数据驱动视图的思想
+ */
+#import "ViewController.h"
+#import "RequestViewModel.h"
+#import "Book.h"
+#import "BookViewCell.h"
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,strong) RequestViewModel *viewModel;
+@property (nonatomic,weak) UITableView *tableView;
+@end
+
 @implementation ViewController
--(RequestModel *)requestModel{
-    if (_requestModel == nil) {
-        _requestModel = [[RequestModel alloc] init];
+//此时是将视图模型作为数据源
+-(RequestViewModel *)viewModel{
+    if (_viewModel == nil) {
+        _viewModel = [[RequestViewModel alloc] init];
     }
-    return _requestModel ;
+    return _viewModel ;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 创建tableView
+    // 1.创建tableView
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = self;
+    tableView.delegate = self;
     [self.view addSubview:tableView];
     self.tableView = tableView;
-    
-    
-    //执行数据请求命令
-    [self.requestModel.requestCommand execute:@"CHAAAA"];
-    
-    //监听命令执行过程,弹框提示
+    [tableView registerNib:[UINib nibWithNibName:@"BookViewCell" bundle:nil] forCellReuseIdentifier:@"BookViewCell"];
+    //1.执行数据请求命令
+    [self.viewModel.requestCommand execute:@"CHAAAA"];
+    //2.监听命令执行过程,弹框提示
     //skip1的原因是,程序已启动就回调用一次
-    [[self.requestModel.requestCommand.executing skip:1] subscribeNext:^(NSNumber * _Nullable x) {
+    [[self.viewModel.requestCommand.executing skip:1] subscribeNext:^(NSNumber * _Nullable x) {
         if ([x boolValue] == YES) {
             //正在执行
             NSLog(@"请求中");
@@ -73,28 +90,25 @@
         NSLog(@"请求失败");
     }];
     
-    //监听数据的改变,驱动视图
-    [RACObserve(self.requestModel, models) subscribeNext:^(id  _Nullable x) {
+    //3.监听数据的改变,驱动视图(数据驱动视图的思想)
+    [RACObserve(self.viewModel, models) subscribeNext:^(id  _Nullable x) {
          [self.tableView reloadData];
     }];
     
 }
 
 #pragma mark - UITableViewDataSource
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 130;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.requestModel.models.count;
+    //此时只是多了一个VM
+    return self.viewModel.models.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    
-    Book *book = self.requestModel.models[indexPath.row];
-    cell.detailTextLabel.text = book.subtitle;
-    cell.textLabel.text = book.title;
+    BookViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookViewCell"];
+    cell.bookModel = self.viewModel.models[indexPath.row];
     return cell;
 }
 
