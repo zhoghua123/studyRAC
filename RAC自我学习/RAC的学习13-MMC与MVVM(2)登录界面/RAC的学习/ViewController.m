@@ -21,8 +21,6 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "LoginViewModel.h"
 @interface ViewController ()
-
-@property (nonatomic, strong) id<RACSubscriber> subscriber;
 @property (weak, nonatomic) IBOutlet UITextField *accountTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
@@ -77,6 +75,20 @@
         //处理登录事件(只要是处理事件,就要想到用命令类(Racmmand)
         //7.执行命令
         [self.loginVM.loginCommand execute:nil];
+    }];
+    
+    
+    //3. 处理登录的执行过程
+    //skip1的原因是,程序已启动就回调用一次
+    [[self.loginVM.loginCommand.executing skip:1] subscribeNext:^(NSNumber * _Nullable x) {
+        if ([x boolValue] == YES) {
+            //正在执行
+            NSLog(@"正在执行");
+            //弹框提示正在登录
+        }else{
+            //执行完成,隐藏弹框
+            NSLog(@"执行完成");
+        }
     }];
 }
 

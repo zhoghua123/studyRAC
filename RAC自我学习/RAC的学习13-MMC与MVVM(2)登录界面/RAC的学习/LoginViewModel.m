@@ -35,22 +35,13 @@
             return nil;
         }];
     }];
+    
     //3. 处理登录请求返回的结果
     [_loginCommand.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
         NSLog(@"%@",x);
     }];
-    //4. 处理登录的执行过程
-    //skip1的原因是,程序已启动就回调用一次
-    [[_loginCommand.executing skip:1] subscribeNext:^(NSNumber * _Nullable x) {
-        if ([x boolValue] == YES) {
-            //正在执行
-            NSLog(@"正在执行");
-            //弹框提示正在登录
-        }else{
-            //执行完成,隐藏弹框
-            NSLog(@"执行完成");
-        }
-    }];
+    
+   
     
 }
 @end
