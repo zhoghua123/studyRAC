@@ -105,7 +105,9 @@
     }];
     
     //3.监听数据的改变,驱动视图(数据驱动视图的思想)
+    @weakify(self);
     [RACObserve(self.viewModel, models) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
          [self.tableView reloadData];
     }];
     
