@@ -7,7 +7,7 @@
 //
 
 #import "Book.h"
-
+#import "ZHBooklistCellViewModel.h"
 @implementation Book
 +(instancetype)bookWithDict:(NSDictionary *)dict{
     
@@ -16,6 +16,10 @@
     book.subtitle = dict[@"subtitle"];
     book.price = dict[@"price"];
     book.pubdate = dict[@"pubdate"];
+    book.cellViewModel = [[ZHBooklistCellViewModel alloc] initWithModel:book];
     return book;
+}
+-(void)dealloc{
+    NSLog(@"%s",__func__);
 }
 @end

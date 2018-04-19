@@ -28,4 +28,5 @@
     _priceAndPubLabel.text = cellViewModel.priceAndPubdate;
 }
 
+
 @end

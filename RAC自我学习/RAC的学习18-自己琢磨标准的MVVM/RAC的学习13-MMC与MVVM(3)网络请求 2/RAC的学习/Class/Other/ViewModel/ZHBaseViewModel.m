@@ -9,5 +9,9 @@
 #import "ZHBaseViewModel.h"
 
 @implementation ZHBaseViewModel
-
+-(instancetype)initWithModel:(ZHBaseModel *)model{
+    if (self = [super init]) {
+    }
+    return self;
+}
 @end

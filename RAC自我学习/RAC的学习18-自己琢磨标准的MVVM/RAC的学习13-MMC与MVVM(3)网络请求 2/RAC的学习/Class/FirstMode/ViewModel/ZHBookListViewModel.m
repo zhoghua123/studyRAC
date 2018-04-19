@@ -6,9 +6,11 @@
 //  Copyright © 2018年 xyj. All rights reserved.
 //
 
+/*
+ 该主线VM只会通信Model不会通信视图VM,视图VM在Model内部更新
+ */
 #import "ZHBookListViewModel.h"
 #import "Book.h"
-#import "ZHBooklistCellViewModel.h"
 @interface ZHBookListViewModel()
 
 @end
@@ -38,7 +40,7 @@
             //将字典映射成模型
             NSArray *modelArray = [[dicAr.rac_sequence map:^id _Nullable(id  _Nullable value) {
                 //一一映射,字典转模型
-                return [[ZHBooklistCellViewModel alloc] initWithModel:[Book bookWithDict:value]];
+                return [Book bookWithDict:value].cellViewModel;
             }] array];
             self.dataSource = modelArray;
         }];

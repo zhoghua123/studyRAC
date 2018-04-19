@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZHBaseViewModelProtocol.h"
-@interface ZHBaseViewModel : NSObject<ZHBaseViewModelProtocol>
-
+@class ZHBaseModel;
+@interface ZHBaseViewModel : NSObject
+- (instancetype)initWithModel:(ZHBaseModel *)model;
 @end

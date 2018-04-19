@@ -18,4 +18,8 @@
     }
     return self;
 }
+
+-(void)dealloc{
+    NSLog(@"%s",__func__);
+}
 @end
