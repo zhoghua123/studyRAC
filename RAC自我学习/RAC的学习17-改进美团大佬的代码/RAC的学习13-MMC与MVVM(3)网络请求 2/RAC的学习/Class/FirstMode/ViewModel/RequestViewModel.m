@@ -34,7 +34,7 @@
         @strongify(self)
         // Zhuo：网络层负责数据请求，以及返回数据封装成对象
         // VM 负责二次加工数据，比如要做筛选过滤操作，这儿单纯赋值触发UI刷新
-        [[self.bookRequest requestBookListWithURL:ZHURLSearchBook andParameter:@{@"q":input}] subscribeNext:^(id  _Nullable responseObject) {
+        [[self.bookRequest requestBookListWithURL:ZHURLSearchBook andParameter:@{@"q":input}] subscribeNext:^(id  _Nullable responseObject) {//监听网络请求成功
             @strongify(self)
             NSArray *dicAr = responseObject[@"books"];
             //将字典映射成模型
@@ -43,7 +43,7 @@
                 return [Book bookWithDict:value];
             }] array];
             self.models = modelArray;
-        }error:^(NSError * _Nullable error) {//监听网络请求错误
+        } error:^(NSError * _Nullable error) {//监听网络请求错误
             ZHLog(@"%@",error);
         }];
         return [RACSignal empty];
