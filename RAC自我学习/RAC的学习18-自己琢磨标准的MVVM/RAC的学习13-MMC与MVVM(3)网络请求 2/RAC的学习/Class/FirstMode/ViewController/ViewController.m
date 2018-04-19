@@ -61,7 +61,7 @@
             NSLog(@"请求完成======%@",x);
         }
     }];
-    //在这里监听命令失败的结果([subscriber sendError:error];)
+    //在这里监听命令失败的结果(网络请求失败的结果)([subscriber sendError:error];)
     [self.viewModel.requestCommand.errors subscribeNext:^(NSError * _Nullable x) {
        ZHLog(@"%@",x);
     }];

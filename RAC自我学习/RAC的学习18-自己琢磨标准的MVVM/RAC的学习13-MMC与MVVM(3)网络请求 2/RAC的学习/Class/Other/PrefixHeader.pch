@@ -25,6 +25,6 @@
 
 /*******接口*********/
 //查询书
-#define ZHURLSearchBook @"https://api.douban.com/v2/book/searc"
+#define ZHURLSearchBook @"https://api.douban.com/v2/book/search"
 
 #endif
