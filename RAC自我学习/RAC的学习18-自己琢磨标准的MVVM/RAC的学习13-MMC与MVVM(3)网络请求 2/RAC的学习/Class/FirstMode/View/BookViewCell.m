@@ -7,7 +7,7 @@
 //
 
 #import "BookViewCell.h"
-#import "Book.h"
+#import "ZHBooklistCellViewModel.h"
 @interface BookViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
@@ -21,12 +21,11 @@
     [super awakeFromNib];
     // Initialization code
 }
-
--(void)setBookModel:(Book *)bookModel{
-    _bookModel = bookModel;
-    _titleLabel.text = bookModel.title;
-    _subtitleLabel.text = bookModel.subtitle;
-    _priceAndPubLabel.text = bookModel.priceAndPubdate;
+-(void)setCellViewModel:(ZHBooklistCellViewModel *)cellViewModel{
+    _cellViewModel = cellViewModel;
+    _titleLabel.text = cellViewModel.title;
+    _subtitleLabel.text = cellViewModel.subtitle;
+    _priceAndPubLabel.text = cellViewModel.priceAndPubdate;
 }
 
 @end

@@ -7,10 +7,9 @@
 //
 
 #import "ZHBookListViewModel.h"
-#import "BookRequest.h"
 #import "Book.h"
+#import "ZHBooklistCellViewModel.h"
 @interface ZHBookListViewModel()
-@property (strong, nonatomic) BookRequest *bookRequest;
 
 @end
 
@@ -19,7 +18,6 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _bookRequest = [[BookRequest alloc] init];
         [self setup];
     }
     return self;
@@ -33,13 +31,14 @@
         @strongify(self)
         // Zhuo：网络层负责数据请求，以及返回数据封装成对象
         // VM 负责二次加工数据，比如要做筛选过滤操作，这儿单纯赋值触发UI刷新
-        [[self.bookRequest requestBookListWithURL:ZHURLSearchBook andParameter:@{@"q":input}] subscribeNext:^(id  _Nullable responseObject) {
+        [[self.netRequest requestBookListWithURL:ZHURLSearchBook andParameter:@{@"q":input}] subscribeNext:^(id  _Nullable responseObject) {
+            //处理数据
             @strongify(self)
             NSArray *dicAr = responseObject[@"books"];
             //将字典映射成模型
             NSArray *modelArray = [[dicAr.rac_sequence map:^id _Nullable(id  _Nullable value) {
                 //一一映射,字典转模型
-                return [Book bookWithDict:value];
+                return [[ZHBooklistCellViewModel alloc] initWithModel:[Book bookWithDict:value]];
             }] array];
             self.models = modelArray;
         }];

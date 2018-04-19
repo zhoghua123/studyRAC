@@ -7,6 +7,8 @@
 //
 /*
  在这个控制器中:
+ ZHTableViewViewModel:
+ 主线VM,有网络请求属性
  ZHBookListViewModel就是主消息VM,继承自ZHTableViewViewModel
  ZHBooklistCellViewModel是视图VM,由主线VM来更新,继承自ZHBaseViewModel
  
@@ -15,7 +17,7 @@
 
 #import "ViewController.h"
 #import "ZHBookListViewModel.h"
-#import "Book.h"
+#import "ZHBooklistCellViewModel.h"
 #import "BookViewCell.h"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) ZHBookListViewModel *viewModel;
@@ -83,7 +85,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BookViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookViewCell"];
-    cell.bookModel = self.viewModel.models[indexPath.row];
+    cell.cellViewModel = self.viewModel.models[indexPath.row];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

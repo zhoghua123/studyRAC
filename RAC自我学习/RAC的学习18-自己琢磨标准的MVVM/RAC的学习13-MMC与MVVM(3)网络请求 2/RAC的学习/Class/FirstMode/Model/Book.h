@@ -7,13 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface Book : NSObject
+#import "ZHBaseModel.h"
+@interface Book : ZHBaseModel
 @property (nonatomic,copy) NSString *title;
 @property (nonatomic,copy) NSString *subtitle;
 @property (nonatomic,copy) NSString *price;
 @property (nonatomic,copy) NSString *pubdate;
-//辅助属性
-@property (nonatomic,copy) NSString *priceAndPubdate;
 +(instancetype)bookWithDict:(NSDictionary *)dict;
 @end

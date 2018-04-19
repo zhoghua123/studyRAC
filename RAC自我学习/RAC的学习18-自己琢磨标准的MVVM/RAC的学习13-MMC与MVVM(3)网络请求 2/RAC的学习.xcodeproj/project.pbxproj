@@ -14,6 +14,7 @@
 		30236E982088480C0011B078 /* ZHTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E972088480C0011B078 /* ZHTableViewViewModel.m */; };
 		30236E9B208848760011B078 /* ZHBookListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E9A208848760011B078 /* ZHBookListViewModel.m */; };
 		30236E9E208849D70011B078 /* ZHBooklistCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E9D208849D70011B078 /* ZHBooklistCellViewModel.m */; };
+		30236EA1208872900011B078 /* ZHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236EA0208872900011B078 /* ZHBaseModel.m */; };
 		302517F41FF0993F000FA9D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302517F31FF0993F000FA9D3 /* ViewController.m */; };
 		302517F71FF0993F000FA9D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517F51FF0993F000FA9D3 /* Main.storyboard */; };
 		302517F91FF0993F000FA9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302517F81FF0993F000FA9D3 /* Assets.xcassets */; };
@@ -39,6 +40,10 @@
 		30236E9A208848760011B078 /* ZHBookListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBookListViewModel.m; sourceTree = "<group>"; };
 		30236E9C208849D70011B078 /* ZHBooklistCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBooklistCellViewModel.h; sourceTree = "<group>"; };
 		30236E9D208849D70011B078 /* ZHBooklistCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBooklistCellViewModel.m; sourceTree = "<group>"; };
+		30236E9F208872900011B078 /* ZHBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBaseModel.h; sourceTree = "<group>"; };
+		30236EA0208872900011B078 /* ZHBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBaseModel.m; sourceTree = "<group>"; };
+		30236EA3208872D20011B078 /* ZHBaseModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBaseModelProtocol.h; sourceTree = "<group>"; };
+		30236EA42088746F0011B078 /* ZHBaseViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBaseViewModelProtocol.h; sourceTree = "<group>"; };
 		302517EC1FF0993F000FA9D3 /* RAC的学习.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAC的学习.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		302517F21FF0993F000FA9D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		302517F31FF0993F000FA9D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 		30236E7D20883F220011B078 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				30236EA2208872A60011B078 /* BaseProtocol */,
 				30236E7E20883F220011B078 /* ViewModel */,
 				30236E7F20883F220011B078 /* Category */,
 				30236E8020883F220011B078 /* Controller */,
@@ -132,6 +138,8 @@
 		30236E8220883F220011B078 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30236E9F208872900011B078 /* ZHBaseModel.h */,
+				30236EA0208872900011B078 /* ZHBaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +212,15 @@
 				303D42692019D0EE00E15C65 /* BookViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		30236EA2208872A60011B078 /* BaseProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				30236EA3208872D20011B078 /* ZHBaseModelProtocol.h */,
+				30236EA42088746F0011B078 /* ZHBaseViewModelProtocol.h */,
+			);
+			path = BaseProtocol;
 			sourceTree = "<group>";
 		};
 		302517E31FF0993F000FA9D3 = {
@@ -375,6 +392,7 @@
 			files = (
 				30236E982088480C0011B078 /* ZHTableViewViewModel.m in Sources */,
 				30757B5120035DA400337ECB /* Book.m in Sources */,
+				30236EA1208872900011B078 /* ZHBaseModel.m in Sources */,
 				303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */,
 				30236E95208847AE0011B078 /* ZHBaseViewModel.m in Sources */,
 				30236E8B2088401D0011B078 /* AppDelegate.m in Sources */,

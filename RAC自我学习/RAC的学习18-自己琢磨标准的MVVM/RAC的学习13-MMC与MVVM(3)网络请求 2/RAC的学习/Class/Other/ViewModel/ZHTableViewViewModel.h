@@ -7,7 +7,7 @@
 //
 
 #import "ZHBaseViewModel.h"
-
+#import "BookRequest.h"
 @interface ZHTableViewViewModel : ZHBaseViewModel
-
+@property (nonatomic,strong) BookRequest *netRequest;
 @end

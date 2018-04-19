@@ -9,5 +9,10 @@
 #import "ZHTableViewViewModel.h"
 
 @implementation ZHTableViewViewModel
-
+-(BookRequest *)netRequest{
+    if (_netRequest == nil) {
+        _netRequest = [[BookRequest alloc] init];
+    }
+    return _netRequest;
+}
 @end

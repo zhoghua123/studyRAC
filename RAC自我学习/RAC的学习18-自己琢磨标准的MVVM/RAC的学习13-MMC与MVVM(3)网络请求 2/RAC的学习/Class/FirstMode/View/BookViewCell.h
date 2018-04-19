@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Book;
+@class ZHBooklistCellViewModel;
 @interface BookViewCell : UITableViewCell
-@property (nonatomic,strong) Book *bookModel;
+@property (nonatomic,strong) ZHBooklistCellViewModel *cellViewModel;
 @end

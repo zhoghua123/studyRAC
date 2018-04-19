@@ -7,7 +7,15 @@
 //
 
 #import "ZHBooklistCellViewModel.h"
-
+#import "Book.h"
 @implementation ZHBooklistCellViewModel
-
+-(instancetype)initWithModel:(ZHBaseModel *)model{
+    if (self = [super init]) {
+        Book *book = (Book *)model;
+        self.title = book.title;
+        self.subtitle = book.subtitle;
+        self.priceAndPubdate  =  [NSString stringWithFormat:@"%@/%@",book.price,book.pubdate];
+    }
+    return self;
+}
 @end
