@@ -8,6 +8,7 @@
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
+#import <ReactiveObjC/ReactiveObjC.h>
 
 #ifdef DEBUG
 #define ZHLog(...) NSLog(__VA_ARGS__)

@@ -1,21 +1,20 @@
 //
-//  RequestViewModel.m
+//  ZHBookListViewModel.m
 //  RAC的学习
 //
-//  Created by xyj on 2018/1/25.
+//  Created by xyj on 2018/4/19.
 //  Copyright © 2018年 xyj. All rights reserved.
 //
 
-#import "RequestViewModel.h"
+#import "ZHBookListViewModel.h"
 #import "BookRequest.h"
 #import "Book.h"
-@interface RequestViewModel ()
-
+@interface ZHBookListViewModel()
 @property (strong, nonatomic) BookRequest *bookRequest;
 
 @end
 
-@implementation RequestViewModel
+@implementation ZHBookListViewModel
 
 - (instancetype)init
 {

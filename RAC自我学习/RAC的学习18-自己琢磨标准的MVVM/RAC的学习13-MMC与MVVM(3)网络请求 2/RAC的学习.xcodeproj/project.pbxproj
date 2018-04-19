@@ -10,11 +10,14 @@
 		30236E8B2088401D0011B078 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E872088401D0011B078 /* AppDelegate.m */; };
 		30236E8C2088401D0011B078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E882088401D0011B078 /* main.m */; };
 		30236E8D2088401D0011B078 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E8A2088401D0011B078 /* Foundation+Log.m */; };
+		30236E95208847AE0011B078 /* ZHBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E94208847AE0011B078 /* ZHBaseViewModel.m */; };
+		30236E982088480C0011B078 /* ZHTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E972088480C0011B078 /* ZHTableViewViewModel.m */; };
+		30236E9B208848760011B078 /* ZHBookListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E9A208848760011B078 /* ZHBookListViewModel.m */; };
+		30236E9E208849D70011B078 /* ZHBooklistCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E9D208849D70011B078 /* ZHBooklistCellViewModel.m */; };
 		302517F41FF0993F000FA9D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302517F31FF0993F000FA9D3 /* ViewController.m */; };
 		302517F71FF0993F000FA9D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517F51FF0993F000FA9D3 /* Main.storyboard */; };
 		302517F91FF0993F000FA9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302517F81FF0993F000FA9D3 /* Assets.xcassets */; };
 		302517FC1FF0993F000FA9D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517FA1FF0993F000FA9D3 /* LaunchScreen.storyboard */; };
-		303D42662019CD7100E15C65 /* RequestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 303D42652019CD7100E15C65 /* RequestViewModel.m */; };
 		303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 303D42682019D0EE00E15C65 /* BookViewCell.m */; };
 		303D426B2019D0EE00E15C65 /* BookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303D42692019D0EE00E15C65 /* BookViewCell.xib */; };
 		30757B5120035DA400337ECB /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 30757B5020035DA400337ECB /* Book.m */; };
@@ -28,6 +31,14 @@
 		30236E892088401D0011B078 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "RAC的学习/Class/Other/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		30236E8A2088401D0011B078 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Foundation+Log.m"; path = "RAC的学习/Class/Other/Foundation+Log.m"; sourceTree = SOURCE_ROOT; };
 		30236E92208842A50011B078 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		30236E93208847AE0011B078 /* ZHBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBaseViewModel.h; sourceTree = "<group>"; };
+		30236E94208847AE0011B078 /* ZHBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBaseViewModel.m; sourceTree = "<group>"; };
+		30236E962088480C0011B078 /* ZHTableViewViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHTableViewViewModel.h; sourceTree = "<group>"; };
+		30236E972088480C0011B078 /* ZHTableViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewViewModel.m; sourceTree = "<group>"; };
+		30236E99208848760011B078 /* ZHBookListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBookListViewModel.h; sourceTree = "<group>"; };
+		30236E9A208848760011B078 /* ZHBookListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBookListViewModel.m; sourceTree = "<group>"; };
+		30236E9C208849D70011B078 /* ZHBooklistCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBooklistCellViewModel.h; sourceTree = "<group>"; };
+		30236E9D208849D70011B078 /* ZHBooklistCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBooklistCellViewModel.m; sourceTree = "<group>"; };
 		302517EC1FF0993F000FA9D3 /* RAC的学习.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAC的学习.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		302517F21FF0993F000FA9D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		302517F31FF0993F000FA9D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -35,8 +46,6 @@
 		302517F81FF0993F000FA9D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302517FB1FF0993F000FA9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302517FD1FF0993F000FA9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		303D42642019CD7100E15C65 /* RequestViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestViewModel.h; sourceTree = "<group>"; };
-		303D42652019CD7100E15C65 /* RequestViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestViewModel.m; sourceTree = "<group>"; };
 		303D42672019D0EE00E15C65 /* BookViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewCell.h; sourceTree = "<group>"; };
 		303D42682019D0EE00E15C65 /* BookViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewCell.m; sourceTree = "<group>"; };
 		303D42692019D0EE00E15C65 /* BookViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewCell.xib; sourceTree = "<group>"; };
@@ -91,6 +100,10 @@
 		30236E7E20883F220011B078 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				30236E93208847AE0011B078 /* ZHBaseViewModel.h */,
+				30236E94208847AE0011B078 /* ZHBaseViewModel.m */,
+				30236E962088480C0011B078 /* ZHTableViewViewModel.h */,
+				30236E972088480C0011B078 /* ZHTableViewViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,8 +188,10 @@
 		30236E902088409D0011B078 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				303D42642019CD7100E15C65 /* RequestViewModel.h */,
-				303D42652019CD7100E15C65 /* RequestViewModel.m */,
+				30236E99208848760011B078 /* ZHBookListViewModel.h */,
+				30236E9A208848760011B078 /* ZHBookListViewModel.m */,
+				30236E9C208849D70011B078 /* ZHBooklistCellViewModel.h */,
+				30236E9D208849D70011B078 /* ZHBooklistCellViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -358,13 +373,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30236E982088480C0011B078 /* ZHTableViewViewModel.m in Sources */,
 				30757B5120035DA400337ECB /* Book.m in Sources */,
 				303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */,
+				30236E95208847AE0011B078 /* ZHBaseViewModel.m in Sources */,
 				30236E8B2088401D0011B078 /* AppDelegate.m in Sources */,
 				302517F41FF0993F000FA9D3 /* ViewController.m in Sources */,
+				30236E9E208849D70011B078 /* ZHBooklistCellViewModel.m in Sources */,
 				AECAEF09207BB0D0002995AF /* BookRequest.m in Sources */,
 				30236E8C2088401D0011B078 /* main.m in Sources */,
-				303D42662019CD7100E15C65 /* RequestViewModel.m in Sources */,
+				30236E9B208848760011B078 /* ZHBookListViewModel.m in Sources */,
 				30236E8D2088401D0011B078 /* Foundation+Log.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

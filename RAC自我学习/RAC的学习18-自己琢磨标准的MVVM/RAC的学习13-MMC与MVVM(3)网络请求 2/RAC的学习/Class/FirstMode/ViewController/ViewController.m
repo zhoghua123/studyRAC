@@ -5,20 +5,28 @@
 //  Created by xyj on 2017/12/25.
 //  Copyright © 2017年 xyj. All rights reserved.
 //
+/*
+ 在这个控制器中:
+ ZHBookListViewModel就是主消息VM,继承自ZHTableViewViewModel
+ ZHBooklistCellViewModel是视图VM,由主线VM来更新,继承自ZHBaseViewModel
+ 
+ */
+
+
 #import "ViewController.h"
-#import "RequestViewModel.h"
+#import "ZHBookListViewModel.h"
 #import "Book.h"
 #import "BookViewCell.h"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong) RequestViewModel *viewModel;
+@property (nonatomic,strong) ZHBookListViewModel *viewModel;
 @property (nonatomic,weak) UITableView *tableView;
 @end
 
 @implementation ViewController
 //此时是将视图模型作为数据源
--(RequestViewModel *)viewModel{
+-(ZHBookListViewModel *)viewModel{
     if (_viewModel == nil) {
-        _viewModel = [[RequestViewModel alloc] init];
+        _viewModel = [[ZHBookListViewModel alloc] init];
     }
     return _viewModel ;
 }
