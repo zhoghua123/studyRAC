@@ -43,8 +43,9 @@
                 return [Book bookWithDict:value];
             }] array];
             self.models = modelArray;
+        }error:^(NSError * _Nullable error) {//监听网络请求错误
+            ZHLog(@"%@",error);
         }];
-        
         return [RACSignal empty];
     }];
 }
