@@ -54,14 +54,16 @@
     [[self.viewModel.requestCommand.executing skip:1] subscribeNext:^(NSNumber * _Nullable x) {
         if ([x boolValue] == YES) {
             //正在执行
-            NSLog(@"请求中");
+            NSLog(@"请求中=====%@",x);
             //弹框提示正在登录
         }else{
             //执行完成,隐藏弹框
-            NSLog(@"请求完成");
+            NSLog(@"请求完成======%@",x);
         }
-    } error:^(NSError * _Nullable error) {
-        NSLog(@"请求失败");
+    }];
+    //在这里监听命令失败的结果([subscriber sendError:error];)
+    [self.viewModel.requestCommand.errors subscribeNext:^(NSError * _Nullable x) {
+       ZHLog(@"%@",x);
     }];
     
     //3.监听数据的改变,驱动视图(数据驱动视图的思想)

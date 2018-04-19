@@ -23,6 +23,7 @@
             [subscriber sendCompleted];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [subscriber sendError:error];
+            [subscriber sendCompleted];
         }];
         return nil;
         // Zhuo：网络请求一般用热信号，多次触发。当然这个case里面冷信号也可以

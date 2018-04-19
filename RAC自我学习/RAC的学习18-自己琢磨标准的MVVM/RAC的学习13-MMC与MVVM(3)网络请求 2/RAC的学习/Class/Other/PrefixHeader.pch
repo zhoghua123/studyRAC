@@ -9,7 +9,7 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 #import <ReactiveObjC/ReactiveObjC.h>
-
+#import <MJExtension/MJExtension.h>
 #ifdef DEBUG
 #define ZHLog(...) NSLog(__VA_ARGS__)
 #else
@@ -25,6 +25,6 @@
 
 /*******接口*********/
 //查询书
-#define ZHURLSearchBook @"https://api.douban.com/v2/book/search"
+#define ZHURLSearchBook @"https://api.douban.com/v2/book/searc"
 
 #endif

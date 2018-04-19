@@ -16,6 +16,5 @@
 @property (nonatomic,copy) NSString *subtitle;
 @property (nonatomic,copy) NSString *price;
 @property (nonatomic,copy) NSString *pubdate;
-+(instancetype)bookWithDict:(NSDictionary *)dict;
 @property (nonatomic,strong) ZHBooklistCellViewModel *cellViewModel;
 @end
