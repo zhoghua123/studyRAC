@@ -12,5 +12,5 @@
 /*网络请求命令*/
 @property (nonatomic, strong) RACCommand *requestCommand;
 //模型数组
-@property (nonatomic, strong) NSArray *models;
+@property (nonatomic, strong) NSArray *dataSource;
 @end

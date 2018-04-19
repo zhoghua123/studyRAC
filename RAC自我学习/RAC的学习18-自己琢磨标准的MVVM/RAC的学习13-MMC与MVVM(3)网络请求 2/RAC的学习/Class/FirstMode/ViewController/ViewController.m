@@ -67,7 +67,7 @@
     //3.监听数据的改变,驱动视图(数据驱动视图的思想)
     // Zhuo: 注意加上weakify/strongify，否则有内存泄漏
     @weakify(self)
-    [RACObserve(self.viewModel, models) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(self.viewModel, dataSource) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
          [self.tableView reloadData];
     }];
@@ -80,12 +80,12 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //此时只是多了一个VM
-    return self.viewModel.models.count;
+    return self.viewModel.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BookViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookViewCell"];
-    cell.cellViewModel = self.viewModel.models[indexPath.row];
+    cell.cellViewModel = self.viewModel.dataSource[indexPath.row];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

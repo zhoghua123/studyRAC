@@ -40,7 +40,7 @@
                 //一一映射,字典转模型
                 return [[ZHBooklistCellViewModel alloc] initWithModel:[Book bookWithDict:value]];
             }] array];
-            self.models = modelArray;
+            self.dataSource = modelArray;
         }];
         
         return [RACSignal empty];
