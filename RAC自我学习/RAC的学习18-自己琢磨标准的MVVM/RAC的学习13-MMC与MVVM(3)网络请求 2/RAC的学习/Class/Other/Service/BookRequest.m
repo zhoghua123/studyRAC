@@ -12,12 +12,12 @@
 
 @implementation BookRequest
 
-- (RACSignal *)requestBookListWithKeyword:(NSString *)keyword
+- (RACSignal *)requestBookListWithURL:(NSString *)URLStr andParameter:(NSDictionary *)parameter
 {
     return [[[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         //3.发送网络请求
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        [manager GET:@"https://api.douban.com/v2/book/search" parameters:@{@"q":keyword} progress:^(NSProgress * _Nonnull downloadProgress) {
+        [manager GET:URLStr parameters:parameter progress:^(NSProgress * _Nonnull downloadProgress) {
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [subscriber sendNext:responseObject];
             [subscriber sendCompleted];

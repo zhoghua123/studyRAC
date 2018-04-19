@@ -11,6 +11,6 @@
 
 @interface BookRequest : NSObject
 
-- (RACSignal *)requestBookListWithKeyword:(NSString *)keyword;
+- (RACSignal *)requestBookListWithURL:(NSString *)URLStr andParameter:(NSDictionary *)parameter;
 
 @end

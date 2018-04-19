@@ -27,6 +27,7 @@
 		30236E882088401D0011B078 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "RAC的学习/Class/Other/main.m"; sourceTree = SOURCE_ROOT; };
 		30236E892088401D0011B078 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "RAC的学习/Class/Other/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		30236E8A2088401D0011B078 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Foundation+Log.m"; path = "RAC的学习/Class/Other/Foundation+Log.m"; sourceTree = SOURCE_ROOT; };
+		30236E92208842A50011B078 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		302517EC1FF0993F000FA9D3 /* RAC的学习.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAC的学习.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		302517F21FF0993F000FA9D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		302517F31FF0993F000FA9D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 				30236E872088401D0011B078 /* AppDelegate.m */,
 				30236E8A2088401D0011B078 /* Foundation+Log.m */,
 				30236E882088401D0011B078 /* main.m */,
+				30236E92208842A50011B078 /* PrefixHeader.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -500,6 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JT87XR82RB;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RAC的学习/Class/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "RAC的学习/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyj-healthy.com.RAC---";
@@ -515,6 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JT87XR82RB;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RAC的学习/Class/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "RAC的学习/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyj-healthy.com.RAC---";
