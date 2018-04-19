@@ -7,32 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		302517F11FF0993F000FA9D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 302517F01FF0993F000FA9D3 /* AppDelegate.m */; };
+		30236E8B2088401D0011B078 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E872088401D0011B078 /* AppDelegate.m */; };
+		30236E8C2088401D0011B078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E882088401D0011B078 /* main.m */; };
+		30236E8D2088401D0011B078 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236E8A2088401D0011B078 /* Foundation+Log.m */; };
 		302517F41FF0993F000FA9D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302517F31FF0993F000FA9D3 /* ViewController.m */; };
 		302517F71FF0993F000FA9D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517F51FF0993F000FA9D3 /* Main.storyboard */; };
 		302517F91FF0993F000FA9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302517F81FF0993F000FA9D3 /* Assets.xcassets */; };
 		302517FC1FF0993F000FA9D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517FA1FF0993F000FA9D3 /* LaunchScreen.storyboard */; };
-		302517FF1FF0993F000FA9D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 302517FE1FF0993F000FA9D3 /* main.m */; };
 		303D42662019CD7100E15C65 /* RequestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 303D42652019CD7100E15C65 /* RequestViewModel.m */; };
 		303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 303D42682019D0EE00E15C65 /* BookViewCell.m */; };
 		303D426B2019D0EE00E15C65 /* BookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303D42692019D0EE00E15C65 /* BookViewCell.xib */; };
 		30757B5120035DA400337ECB /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 30757B5020035DA400337ECB /* Book.m */; };
-		30757B532003624700337ECB /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 30757B522003624700337ECB /* Foundation+Log.m */; };
 		8035B96ADD961A0D47B756B1 /* Pods_RAC___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2AEB05D693A9DEB65A46222 /* Pods_RAC___.framework */; };
 		AECAEF09207BB0D0002995AF /* BookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AECAEF08207BB0D0002995AF /* BookRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30236E872088401D0011B078 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "RAC的学习/Class/Other/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
+		30236E882088401D0011B078 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "RAC的学习/Class/Other/main.m"; sourceTree = SOURCE_ROOT; };
+		30236E892088401D0011B078 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "RAC的学习/Class/Other/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		30236E8A2088401D0011B078 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Foundation+Log.m"; path = "RAC的学习/Class/Other/Foundation+Log.m"; sourceTree = SOURCE_ROOT; };
+		30236E92208842A50011B078 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		302517EC1FF0993F000FA9D3 /* RAC的学习.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAC的学习.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		302517EF1FF0993F000FA9D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		302517F01FF0993F000FA9D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		302517F21FF0993F000FA9D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		302517F31FF0993F000FA9D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		302517F61FF0993F000FA9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		302517F81FF0993F000FA9D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302517FB1FF0993F000FA9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302517FD1FF0993F000FA9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		302517FE1FF0993F000FA9D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		303D42642019CD7100E15C65 /* RequestViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestViewModel.h; sourceTree = "<group>"; };
 		303D42652019CD7100E15C65 /* RequestViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestViewModel.m; sourceTree = "<group>"; };
 		303D42672019D0EE00E15C65 /* BookViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewCell.h; sourceTree = "<group>"; };
@@ -40,7 +42,6 @@
 		303D42692019D0EE00E15C65 /* BookViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewCell.xib; sourceTree = "<group>"; };
 		30757B4F20035DA400337ECB /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		30757B5020035DA400337ECB /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
-		30757B522003624700337ECB /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		AECAEF07207BB0D0002995AF /* BookRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookRequest.h; sourceTree = "<group>"; };
 		AECAEF08207BB0D0002995AF /* BookRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookRequest.m; sourceTree = "<group>"; };
 		C0ED69D5C2ED05C92C531742 /* Pods-RAC的学习.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAC的学习.release.xcconfig"; path = "Pods/Target Support Files/Pods-RAC的学习/Pods-RAC的学习.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +61,136 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30236E7C20883F220011B078 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				30236E8420883F220011B078 /* FirstMode */,
+				30236E7D20883F220011B078 /* Other */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		30236E7D20883F220011B078 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				30236E7E20883F220011B078 /* ViewModel */,
+				30236E7F20883F220011B078 /* Category */,
+				30236E8020883F220011B078 /* Controller */,
+				30236E8120883F220011B078 /* Three */,
+				30236E8220883F220011B078 /* Model */,
+				30236E8320883F220011B078 /* Service */,
+				30236E892088401D0011B078 /* AppDelegate.h */,
+				30236E872088401D0011B078 /* AppDelegate.m */,
+				30236E8A2088401D0011B078 /* Foundation+Log.m */,
+				30236E882088401D0011B078 /* main.m */,
+				30236E92208842A50011B078 /* PrefixHeader.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		30236E7E20883F220011B078 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30236E7F20883F220011B078 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		30236E8020883F220011B078 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		30236E8120883F220011B078 /* Three */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Three;
+			sourceTree = "<group>";
+		};
+		30236E8220883F220011B078 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30236E8320883F220011B078 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AECAEF07207BB0D0002995AF /* BookRequest.h */,
+				AECAEF08207BB0D0002995AF /* BookRequest.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		30236E8420883F220011B078 /* FirstMode */ = {
+			isa = PBXGroup;
+			children = (
+				30236E91208840A90011B078 /* View */,
+				30236E902088409D0011B078 /* ViewModel */,
+				30236E8F2088408F0011B078 /* Model */,
+				30236E8E2088407A0011B078 /* ViewController */,
+			);
+			path = FirstMode;
+			sourceTree = "<group>";
+		};
+		30236E8620883F930011B078 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				302517F81FF0993F000FA9D3 /* Assets.xcassets */,
+				302517FA1FF0993F000FA9D3 /* LaunchScreen.storyboard */,
+				302517FD1FF0993F000FA9D3 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		30236E8E2088407A0011B078 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				302517F21FF0993F000FA9D3 /* ViewController.h */,
+				302517F31FF0993F000FA9D3 /* ViewController.m */,
+				302517F51FF0993F000FA9D3 /* Main.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		30236E8F2088408F0011B078 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30757B4F20035DA400337ECB /* Book.h */,
+				30757B5020035DA400337ECB /* Book.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30236E902088409D0011B078 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				303D42642019CD7100E15C65 /* RequestViewModel.h */,
+				303D42652019CD7100E15C65 /* RequestViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30236E91208840A90011B078 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				303D42672019D0EE00E15C65 /* BookViewCell.h */,
+				303D42682019D0EE00E15C65 /* BookViewCell.m */,
+				303D42692019D0EE00E15C65 /* BookViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		302517E31FF0993F000FA9D3 = {
 			isa = PBXGroup;
 			children = (
@@ -81,25 +212,8 @@
 		302517EE1FF0993F000FA9D3 /* RAC的学习 */ = {
 			isa = PBXGroup;
 			children = (
-				302517EF1FF0993F000FA9D3 /* AppDelegate.h */,
-				302517F01FF0993F000FA9D3 /* AppDelegate.m */,
-				302517F21FF0993F000FA9D3 /* ViewController.h */,
-				302517F31FF0993F000FA9D3 /* ViewController.m */,
-				303D42642019CD7100E15C65 /* RequestViewModel.h */,
-				303D42652019CD7100E15C65 /* RequestViewModel.m */,
-				AECAEF07207BB0D0002995AF /* BookRequest.h */,
-				AECAEF08207BB0D0002995AF /* BookRequest.m */,
-				30757B4F20035DA400337ECB /* Book.h */,
-				30757B5020035DA400337ECB /* Book.m */,
-				303D42672019D0EE00E15C65 /* BookViewCell.h */,
-				303D42682019D0EE00E15C65 /* BookViewCell.m */,
-				303D42692019D0EE00E15C65 /* BookViewCell.xib */,
-				30757B522003624700337ECB /* Foundation+Log.m */,
-				302517F51FF0993F000FA9D3 /* Main.storyboard */,
-				302517F81FF0993F000FA9D3 /* Assets.xcassets */,
-				302517FA1FF0993F000FA9D3 /* LaunchScreen.storyboard */,
-				302517FD1FF0993F000FA9D3 /* Info.plist */,
-				302517FE1FF0993F000FA9D3 /* main.m */,
+				30236E7C20883F220011B078 /* Class */,
+				30236E8620883F930011B078 /* SupportingFiles */,
 			);
 			path = "RAC的学习";
 			sourceTree = "<group>";
@@ -246,12 +360,12 @@
 			files = (
 				30757B5120035DA400337ECB /* Book.m in Sources */,
 				303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */,
+				30236E8B2088401D0011B078 /* AppDelegate.m in Sources */,
 				302517F41FF0993F000FA9D3 /* ViewController.m in Sources */,
-				302517FF1FF0993F000FA9D3 /* main.m in Sources */,
 				AECAEF09207BB0D0002995AF /* BookRequest.m in Sources */,
-				302517F11FF0993F000FA9D3 /* AppDelegate.m in Sources */,
-				30757B532003624700337ECB /* Foundation+Log.m in Sources */,
+				30236E8C2088401D0011B078 /* main.m in Sources */,
 				303D42662019CD7100E15C65 /* RequestViewModel.m in Sources */,
+				30236E8D2088401D0011B078 /* Foundation+Log.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JT87XR82RB;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RAC的学习/Class/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "RAC的学习/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyj-healthy.com.RAC---";
@@ -403,6 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JT87XR82RB;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RAC的学习/Class/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "RAC的学习/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyj-healthy.com.RAC---";
