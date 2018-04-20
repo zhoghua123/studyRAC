@@ -18,6 +18,7 @@
 #import "ZHBookListController.h"
 #import "ZHBookListViewModel.h"
 #import "ZHBooklistCellViewModel.h"
+#import "ZHDataBindController.h"
 #import "BookViewCell.h"
 @interface ZHBookListController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) ZHBookListViewModel *viewModel;
@@ -42,6 +43,17 @@
     [self.view addSubview:tableView];
     self.tableView = tableView;
     [tableView registerNib:[UINib nibWithNibName:@"BookViewCell" bundle:nil] forCellReuseIdentifier:@"BookViewCell"];
+    UIButton *rigBtn = [[UIButton alloc] init];
+    rigBtn.bounds = CGRectMake(0, 0, 50, 30);
+    rigBtn.backgroundColor = [UIColor redColor];
+    [rigBtn setTitle:@"下一页" forState:UIControlStateNormal];
+    @weakify(self);
+    [[rigBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        ZHDataBindController *bindvc = [[ZHDataBindController alloc] init];
+        [self.navigationController pushViewController:bindvc animated:YES];
+    }];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rigBtn];
     //1.执行数据请求命令
     [self.viewModel.requestCommand execute:@"iOS"];
     
@@ -69,7 +81,6 @@
     
     //3.监听数据的改变,驱动视图(数据驱动视图的思想)
     // Zhuo: 注意加上weakify/strongify，否则有内存泄漏
-    @weakify(self)
     [RACObserve(self.viewModel, dataSource) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
         [self.tableView reloadData];
