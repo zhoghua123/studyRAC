@@ -19,6 +19,7 @@
 		302517F71FF0993F000FA9D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517F51FF0993F000FA9D3 /* Main.storyboard */; };
 		302517F91FF0993F000FA9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302517F81FF0993F000FA9D3 /* Assets.xcassets */; };
 		302517FC1FF0993F000FA9D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517FA1FF0993F000FA9D3 /* LaunchScreen.storyboard */; };
+		302E91682089945A0029C827 /* ZHBookListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E91672089945A0029C827 /* ZHBookListController.m */; };
 		303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 303D42682019D0EE00E15C65 /* BookViewCell.m */; };
 		303D426B2019D0EE00E15C65 /* BookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303D42692019D0EE00E15C65 /* BookViewCell.xib */; };
 		30757B5120035DA400337ECB /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 30757B5020035DA400337ECB /* Book.m */; };
@@ -51,6 +52,8 @@
 		302517F81FF0993F000FA9D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302517FB1FF0993F000FA9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302517FD1FF0993F000FA9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		302E91662089945A0029C827 /* ZHBookListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBookListController.h; sourceTree = "<group>"; };
+		302E91672089945A0029C827 /* ZHBookListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBookListController.m; sourceTree = "<group>"; };
 		303D42672019D0EE00E15C65 /* BookViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewCell.h; sourceTree = "<group>"; };
 		303D42682019D0EE00E15C65 /* BookViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewCell.m; sourceTree = "<group>"; };
 		303D42692019D0EE00E15C65 /* BookViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewCell.xib; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				302517F21FF0993F000FA9D3 /* ViewController.h */,
+				302E91662089945A0029C827 /* ZHBookListController.h */,
+				302E91672089945A0029C827 /* ZHBookListController.m */,
 				302517F31FF0993F000FA9D3 /* ViewController.m */,
 				302517F51FF0993F000FA9D3 /* Main.storyboard */,
 			);
@@ -395,6 +400,7 @@
 				30236EA1208872900011B078 /* ZHBaseModel.m in Sources */,
 				303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */,
 				30236E95208847AE0011B078 /* ZHBaseViewModel.m in Sources */,
+				302E91682089945A0029C827 /* ZHBookListController.m in Sources */,
 				30236E8B2088401D0011B078 /* AppDelegate.m in Sources */,
 				302517F41FF0993F000FA9D3 /* ViewController.m in Sources */,
 				30236E9E208849D70011B078 /* ZHBooklistCellViewModel.m in Sources */,

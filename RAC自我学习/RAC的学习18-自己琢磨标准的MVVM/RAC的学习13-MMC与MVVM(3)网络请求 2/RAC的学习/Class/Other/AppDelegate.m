@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ZHBookListController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController *NAV = [[UINavigationController alloc] initWithRootViewController:[ZHBookListController new]];
+    self.window.rootViewController =NAV ;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
