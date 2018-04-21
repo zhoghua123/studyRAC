@@ -20,12 +20,19 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
--(void)setCellViewModel:(ZHBooklistCellViewModel *)cellViewModel{
-    _cellViewModel = cellViewModel;
-    _titleLabel.text = cellViewModel.title;
-    _subtitleLabel.text = cellViewModel.subtitle;
-    _priceAndPubLabel.text = cellViewModel.priceAndPubdate;
+//-(void)setCellViewModel:(ZHBooklistCellViewModel *)cellViewModel{
+//    _cellViewModel = cellViewModel;
+//    _titleLabel.text = cellViewModel.title;
+//    _subtitleLabel.text = cellViewModel.subtitle;
+//    _priceAndPubLabel.text = cellViewModel.priceAndPubdate;
+//}
+-(void)bindViewWithViewModel:(ZHBaseViewModel *)cellViewModel{
+   ZHBooklistCellViewModel * xcellViewModel = (ZHBooklistCellViewModel *)cellViewModel;
+    //单向绑定!!!!
+    //rac_prepareForReuseSignal: 专门用于cell的解绑
+    RAC(self.titleLabel,text) = [RACObserve(xcellViewModel, title) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.subtitleLabel,text) = [RACObserve(xcellViewModel, subtitle) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.priceAndPubLabel,text) = [RACObserve(xcellViewModel, priceAndPubdate) takeUntil:self.rac_prepareForReuseSignal];
 }
-
 
 @end

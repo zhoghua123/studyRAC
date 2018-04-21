@@ -17,6 +17,7 @@
 		30236EA1208872900011B078 /* ZHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236EA0208872900011B078 /* ZHBaseModel.m */; };
 		302517F91FF0993F000FA9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302517F81FF0993F000FA9D3 /* Assets.xcassets */; };
 		302517FC1FF0993F000FA9D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517FA1FF0993F000FA9D3 /* LaunchScreen.storyboard */; };
+		302979F5208ADE70002AB8ED /* ZHBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302979F4208ADE70002AB8ED /* ZHBaseViewCell.m */; };
 		302E91682089945A0029C827 /* ZHBookListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E91672089945A0029C827 /* ZHBookListController.m */; };
 		302E916B2089985E0029C827 /* ZHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E916A2089985E0029C827 /* ZHNavigationController.m */; };
 		302E917420899AF90029C827 /* ZHDataBindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E917220899AF90029C827 /* ZHDataBindController.m */; };
@@ -52,6 +53,8 @@
 		302517F81FF0993F000FA9D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302517FB1FF0993F000FA9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302517FD1FF0993F000FA9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		302979F3208ADE70002AB8ED /* ZHBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBaseViewCell.h; sourceTree = "<group>"; };
+		302979F4208ADE70002AB8ED /* ZHBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBaseViewCell.m; sourceTree = "<group>"; };
 		302E91662089945A0029C827 /* ZHBookListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBookListController.h; sourceTree = "<group>"; };
 		302E91672089945A0029C827 /* ZHBookListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBookListController.m; sourceTree = "<group>"; };
 		302E91692089985E0029C827 /* ZHNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHNavigationController.h; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		30236E7D20883F220011B078 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				302979F2208ADE4E002AB8ED /* View */,
 				30236EA2208872A60011B078 /* BaseProtocol */,
 				30236E7E20883F220011B078 /* ViewModel */,
 				30236E7F20883F220011B078 /* Category */,
@@ -262,6 +266,15 @@
 				30236E8620883F930011B078 /* SupportingFiles */,
 			);
 			path = "RAC的学习";
+			sourceTree = "<group>";
+		};
+		302979F2208ADE4E002AB8ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				302979F3208ADE70002AB8ED /* ZHBaseViewCell.h */,
+				302979F4208ADE70002AB8ED /* ZHBaseViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		302E916C20899A5D0029C827 /* secondMode */ = {
@@ -464,6 +477,7 @@
 				302E917A2089D4AA0029C827 /* ZHHotelTitleCell.m in Sources */,
 				30236E8C2088401D0011B078 /* main.m in Sources */,
 				30236E9B208848760011B078 /* ZHBookListViewModel.m in Sources */,
+				302979F5208ADE70002AB8ED /* ZHBaseViewCell.m in Sources */,
 				302E917D2089DAD20029C827 /* ZHHotelTitleViewModel.m in Sources */,
 				30236E8D2088401D0011B078 /* Foundation+Log.m in Sources */,
 			);

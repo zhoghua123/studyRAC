@@ -100,7 +100,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BookViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookViewCell"];
-    cell.cellViewModel = self.viewModel.dataSource[indexPath.row];
+//    cell.cellViewModel = self.viewModel.dataSource[indexPath.row];
+    [cell bindViewWithViewModel:self.viewModel.dataSource[indexPath.row]];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
