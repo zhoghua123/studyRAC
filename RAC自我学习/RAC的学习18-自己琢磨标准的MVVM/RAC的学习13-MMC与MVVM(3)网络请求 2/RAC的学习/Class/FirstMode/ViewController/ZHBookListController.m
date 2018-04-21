@@ -50,7 +50,8 @@
     @weakify(self);
     [[rigBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
-        ZHDataBindController *bindvc = [[ZHDataBindController alloc] init];
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"ZHDataBindController" bundle:nil];
+        ZHDataBindController *bindvc = [storyBoard instantiateInitialViewController];
         [self.navigationController pushViewController:bindvc animated:YES];
     }];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rigBtn];

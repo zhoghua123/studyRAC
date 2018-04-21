@@ -1,5 +1,5 @@
 //
-//  ZHDataBindController.h
+//  ZHHotelTitleCell.h
 //  RAC的学习
 //
 //  Created by xyj on 2018/4/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHDataBindController : UITableViewController
+@interface ZHHotelTitleCell : UITableViewCell
 
 @end
