@@ -100,6 +100,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BookViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookViewCell"];
+    //给cell绑定视图VM
 //    cell.cellViewModel = self.viewModel.dataSource[indexPath.row];
     [cell bindViewWithViewModel:self.viewModel.dataSource[indexPath.row]];
     return cell;

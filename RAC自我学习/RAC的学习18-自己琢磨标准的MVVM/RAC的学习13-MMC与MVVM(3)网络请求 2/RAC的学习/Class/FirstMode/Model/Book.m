@@ -10,7 +10,7 @@
 #import "ZHBooklistCellViewModel.h"
 @implementation Book
 
-//重写set方法,获取到该属性
+//重写set方法,获取到该属性(通过模型更新视图VM)
 -(ZHBooklistCellViewModel *)cellViewModel{
     return [[ZHBooklistCellViewModel alloc] initWithModel:self];
 }
