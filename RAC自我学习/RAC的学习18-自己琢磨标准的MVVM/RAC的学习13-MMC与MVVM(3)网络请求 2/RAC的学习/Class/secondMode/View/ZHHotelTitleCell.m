@@ -7,15 +7,14 @@
 //
 
 #import "ZHHotelTitleCell.h"
-
+#import "ZHHotelTitleViewModel.h"
 @interface ZHHotelTitleCell()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @end
 @implementation ZHHotelTitleCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+-(void)bindViewWithViewModel:(ZHBaseViewModel *)cellViewModel{
+    ZHHotelTitleViewModel *cellVM = (ZHHotelTitleViewModel *)cellViewModel;
+    RAC(self.titleLabel,text) = RACObserve(cellVM, title);
 }
-
 @end

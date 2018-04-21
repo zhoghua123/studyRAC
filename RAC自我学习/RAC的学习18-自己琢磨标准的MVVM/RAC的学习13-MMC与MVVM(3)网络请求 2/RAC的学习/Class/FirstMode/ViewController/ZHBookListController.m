@@ -50,9 +50,7 @@
     @weakify(self);
     [[rigBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"ZHDataBindController" bundle:nil];
-        ZHDataBindController *bindvc = [storyBoard instantiateInitialViewController];
-        [self.navigationController pushViewController:bindvc animated:YES];
+        [self.navigationController pushViewController:[ZHDataBindController new] animated:YES];
     }];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rigBtn];
     //1.执行数据请求命令
