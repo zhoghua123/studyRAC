@@ -11,12 +11,18 @@
 #import "ZHHotelTitleCell.h"
 #import "ZHHotelResultCell.h"
 #import "ZHLabelAndTextFieldCell.h"
+#import "ZHDataBindViewModel.h"
 @interface ZHDataBindController ()
-
+@property (nonatomic,strong) ZHDataBindViewModel *bindVM;
 @end
 
 @implementation ZHDataBindController
-
+-(ZHDataBindViewModel *)bindVM{
+    if (_bindVM == nil) {
+        _bindVM = [[ZHDataBindViewModel alloc] init];
+    }
+    return _bindVM ;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"ZHHotelBtnsCell" bundle:nil] forCellReuseIdentifier:@"ZHHotelBtnsCell"];
@@ -38,18 +44,47 @@
     return 5;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 3) {
-      ZHHotelTitleCell *cell3 =   [tableView dequeueReusableCellWithIdentifier:@"ZHHotelTitleCell"];
-        return cell3;
-    }else if (indexPath.row == 4){
-      ZHHotelBtnsCell *cell4 =   [tableView dequeueReusableCellWithIdentifier:@"ZHHotelBtnsCell"];
-        return cell4;
-    }else if (indexPath.row == 0){
-     ZHHotelTitleCell *cell0 =  [tableView dequeueReusableCellWithIdentifier:@"ZHHotelTitleCell"];
-        return cell0;
-    }else{
-     ZHLabelAndTextFieldCell *cell12 =     [tableView dequeueReusableCellWithIdentifier:@"ZHLabelAndTextFieldCell"];
-        return cell12;
+    switch (indexPath.row) {
+        case 0:
+        {
+            ZHHotelTitleCell *cell0 =  [tableView dequeueReusableCellWithIdentifier:@"ZHHotelTitleCell"];
+            [cell0 bindViewWithViewModel:self.bindVM.hotelTitleVM];
+            return cell0;
+        }
+            break;
+        case 1:
+        {
+            ZHLabelAndTextFieldCell *cell1 =     [tableView dequeueReusableCellWithIdentifier:@"ZHLabelAndTextFieldCell"];
+            cell1.titleLabel.text = @"入住人";
+            [cell1 bindViewWithViewModel:self.bindVM.nameInputVM];
+            return cell1;
+        }
+            break;
+        case 2:
+        {
+            ZHLabelAndTextFieldCell *cell2 =     [tableView dequeueReusableCellWithIdentifier:@"ZHLabelAndTextFieldCell"];
+            cell2.titleLabel.text = @"手机号";
+            [cell2 bindViewWithViewModel:self.bindVM.PhoneInputVM];
+            return cell2;
+        }
+            break;
+        case 3:
+        {
+            ZHHotelResultCell *cell3 =   [tableView dequeueReusableCellWithIdentifier:@"ZHHotelResultCell"];
+            [cell3 bindViewWithViewModel:self.bindVM.resultVM];
+            return cell3;
+        }
+            break;
+        case 4:
+        {
+            ZHHotelBtnsCell *cell4 =   [tableView dequeueReusableCellWithIdentifier:@"ZHHotelBtnsCell"];
+            [cell4 bindViewWithViewModel:self.bindVM.orderDetailVM];
+            return cell4;
+        }
+            break;
+        default:
+            break;
     }
+    return nil;
 }
 @end

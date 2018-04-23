@@ -10,4 +10,5 @@
 
 @interface ZHLabelAndTextFieldViewModel : ZHBaseViewModel
 @property (nonatomic,copy) NSString *inputText;
+@property (nonatomic,strong) RACSignal *inputChannel;
 @end

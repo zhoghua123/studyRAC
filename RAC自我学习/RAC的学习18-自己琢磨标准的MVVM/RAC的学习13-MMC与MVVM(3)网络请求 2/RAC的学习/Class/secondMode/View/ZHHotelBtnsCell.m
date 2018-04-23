@@ -7,18 +7,17 @@
 //
 
 #import "ZHHotelBtnsCell.h"
+#import "ZHOrderDetailViewModel.h"
+@interface ZHHotelBtnsCell ()
+@property (weak, nonatomic) IBOutlet UIButton *clearBtn;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+@end
 
 @implementation ZHHotelBtnsCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+-(void)bindViewWithViewModel:(ZHBaseViewModel *)cellViewModel{
+    ZHOrderDetailViewModel *VM = (ZHOrderDetailViewModel *)cellViewModel;
+    self.clearBtn.rac_command = VM.clearCommand;
+    self.submitBtn.rac_command = VM.submitCommand;
 }
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 @end

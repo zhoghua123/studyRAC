@@ -9,5 +9,6 @@
 #import "ZHBaseViewCell.h"
 
 @interface ZHLabelAndTextFieldCell : ZHBaseViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

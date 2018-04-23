@@ -17,6 +17,11 @@
 		30236EA1208872900011B078 /* ZHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30236EA0208872900011B078 /* ZHBaseModel.m */; };
 		302517F91FF0993F000FA9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302517F81FF0993F000FA9D3 /* Assets.xcassets */; };
 		302517FC1FF0993F000FA9D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302517FA1FF0993F000FA9D3 /* LaunchScreen.storyboard */; };
+		30296C12208D659C002DEE12 /* ZHNameInputViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30296C11208D659C002DEE12 /* ZHNameInputViewModel.m */; };
+		30296C15208D65D8002DEE12 /* ZHPhoneInputViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30296C14208D65D8002DEE12 /* ZHPhoneInputViewModel.m */; };
+		30296C18208D70E7002DEE12 /* ZHOrderDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30296C17208D70E7002DEE12 /* ZHOrderDetailViewModel.m */; };
+		30296C1B208D74AC002DEE12 /* ZHDataBindViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30296C1A208D74AC002DEE12 /* ZHDataBindViewModel.m */; };
+		30296C1E208D801B002DEE12 /* ZHHotelResultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30296C1D208D801B002DEE12 /* ZHHotelResultViewModel.m */; };
 		302979F5208ADE70002AB8ED /* ZHBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302979F4208ADE70002AB8ED /* ZHBaseViewCell.m */; };
 		302979F8208AE578002AB8ED /* ZHLabelAndTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302979F7208AE578002AB8ED /* ZHLabelAndTextFieldCell.m */; };
 		302979FB208AE5BC002AB8ED /* ZHLabelAndTextFieldViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 302979FA208AE5BC002AB8ED /* ZHLabelAndTextFieldViewModel.m */; };
@@ -60,6 +65,16 @@
 		302517F81FF0993F000FA9D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302517FB1FF0993F000FA9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302517FD1FF0993F000FA9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30296C10208D659C002DEE12 /* ZHNameInputViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHNameInputViewModel.h; sourceTree = "<group>"; };
+		30296C11208D659C002DEE12 /* ZHNameInputViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHNameInputViewModel.m; sourceTree = "<group>"; };
+		30296C13208D65D8002DEE12 /* ZHPhoneInputViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHPhoneInputViewModel.h; sourceTree = "<group>"; };
+		30296C14208D65D8002DEE12 /* ZHPhoneInputViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHPhoneInputViewModel.m; sourceTree = "<group>"; };
+		30296C16208D70E7002DEE12 /* ZHOrderDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHOrderDetailViewModel.h; sourceTree = "<group>"; };
+		30296C17208D70E7002DEE12 /* ZHOrderDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHOrderDetailViewModel.m; sourceTree = "<group>"; };
+		30296C19208D74AC002DEE12 /* ZHDataBindViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHDataBindViewModel.h; sourceTree = "<group>"; };
+		30296C1A208D74AC002DEE12 /* ZHDataBindViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHDataBindViewModel.m; sourceTree = "<group>"; };
+		30296C1C208D801B002DEE12 /* ZHHotelResultViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHHotelResultViewModel.h; sourceTree = "<group>"; };
+		30296C1D208D801B002DEE12 /* ZHHotelResultViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHHotelResultViewModel.m; sourceTree = "<group>"; };
 		302979F3208ADE70002AB8ED /* ZHBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHBaseViewCell.h; sourceTree = "<group>"; };
 		302979F4208ADE70002AB8ED /* ZHBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHBaseViewCell.m; sourceTree = "<group>"; };
 		302979F6208AE578002AB8ED /* ZHLabelAndTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHLabelAndTextFieldCell.h; sourceTree = "<group>"; };
@@ -309,10 +324,20 @@
 		302E916D20899A680029C827 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				30296C19208D74AC002DEE12 /* ZHDataBindViewModel.h */,
+				30296C1A208D74AC002DEE12 /* ZHDataBindViewModel.m */,
 				302E917B2089DAD20029C827 /* ZHHotelTitleViewModel.h */,
 				302E917C2089DAD20029C827 /* ZHHotelTitleViewModel.m */,
 				302979F9208AE5BC002AB8ED /* ZHLabelAndTextFieldViewModel.h */,
 				302979FA208AE5BC002AB8ED /* ZHLabelAndTextFieldViewModel.m */,
+				30296C10208D659C002DEE12 /* ZHNameInputViewModel.h */,
+				30296C11208D659C002DEE12 /* ZHNameInputViewModel.m */,
+				30296C13208D65D8002DEE12 /* ZHPhoneInputViewModel.h */,
+				30296C14208D65D8002DEE12 /* ZHPhoneInputViewModel.m */,
+				30296C16208D70E7002DEE12 /* ZHOrderDetailViewModel.h */,
+				30296C17208D70E7002DEE12 /* ZHOrderDetailViewModel.m */,
+				30296C1C208D801B002DEE12 /* ZHHotelResultViewModel.h */,
+				30296C1D208D801B002DEE12 /* ZHHotelResultViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -495,12 +520,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30296C18208D70E7002DEE12 /* ZHOrderDetailViewModel.m in Sources */,
 				30297A0C208AE82F002AB8ED /* ZHHotelBtnsCell.m in Sources */,
 				30236E982088480C0011B078 /* ZHTableViewViewModel.m in Sources */,
 				302E916B2089985E0029C827 /* ZHNavigationController.m in Sources */,
 				30757B5120035DA400337ECB /* Book.m in Sources */,
 				30236EA1208872900011B078 /* ZHBaseModel.m in Sources */,
 				303D426A2019D0EE00E15C65 /* BookViewCell.m in Sources */,
+				30296C12208D659C002DEE12 /* ZHNameInputViewModel.m in Sources */,
 				30236E95208847AE0011B078 /* ZHBaseViewModel.m in Sources */,
 				302979F8208AE578002AB8ED /* ZHLabelAndTextFieldCell.m in Sources */,
 				30297A07208AE7D1002AB8ED /* ZHHotelResultCell.m in Sources */,
@@ -511,11 +538,14 @@
 				302979FB208AE5BC002AB8ED /* ZHLabelAndTextFieldViewModel.m in Sources */,
 				AECAEF09207BB0D0002995AF /* BookRequest.m in Sources */,
 				302E917A2089D4AA0029C827 /* ZHHotelTitleCell.m in Sources */,
+				30296C1E208D801B002DEE12 /* ZHHotelResultViewModel.m in Sources */,
+				30296C1B208D74AC002DEE12 /* ZHDataBindViewModel.m in Sources */,
 				30236E8C2088401D0011B078 /* main.m in Sources */,
 				30236E9B208848760011B078 /* ZHBookListViewModel.m in Sources */,
 				302979F5208ADE70002AB8ED /* ZHBaseViewCell.m in Sources */,
 				302E917D2089DAD20029C827 /* ZHHotelTitleViewModel.m in Sources */,
 				30236E8D2088401D0011B078 /* Foundation+Log.m in Sources */,
+				30296C15208D65D8002DEE12 /* ZHPhoneInputViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

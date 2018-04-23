@@ -9,5 +9,13 @@
 #import "ZHHotelTitleViewModel.h"
 
 @implementation ZHHotelTitleViewModel
-
+-(instancetype)init{
+    if (self = [super init]) {
+        [self setup];
+    }
+    return self;
+}
+-(void)setup{
+    _titleSignal = RACObserve(self, title);
+}
 @end

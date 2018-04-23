@@ -9,5 +9,13 @@
 #import "ZHLabelAndTextFieldViewModel.h"
 
 @implementation ZHLabelAndTextFieldViewModel
-
+-(instancetype)init{
+    if (self = [super init]) {
+        [self setup];
+    }
+    return self;
+}
+-(void)setup{
+    _inputChannel = RACObserve(self, inputText);
+}
 @end

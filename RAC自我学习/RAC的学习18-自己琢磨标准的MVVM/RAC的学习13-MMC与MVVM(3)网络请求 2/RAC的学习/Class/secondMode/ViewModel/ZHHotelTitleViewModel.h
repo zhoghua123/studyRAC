@@ -10,4 +10,5 @@
 
 @interface ZHHotelTitleViewModel : ZHBaseViewModel
 @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) RACSignal *titleSignal;
 @end
