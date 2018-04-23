@@ -9,7 +9,7 @@
 #import "ZHBaseViewModel.h"
 
 @interface ZHOrderDetailViewModel : ZHBaseViewModel
-
+//别的控件的话,就是对应的字符串,按钮的话对应的就是Command
 //用于按钮的点击事件
 @property (nonatomic,strong) RACCommand *clearCommand;
 @property (nonatomic,strong) RACCommand *submitCommand;

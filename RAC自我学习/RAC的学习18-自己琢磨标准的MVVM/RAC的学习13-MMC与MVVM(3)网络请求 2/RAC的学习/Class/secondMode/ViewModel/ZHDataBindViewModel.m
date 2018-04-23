@@ -5,13 +5,19 @@
 //  Created by xyj on 2018/4/23.
 //  Copyright © 2018年 xyj. All rights reserved.
 //
+ /*
+ 视图VM间的通信:
+ 1.源视图VM通过subject发出信号
+ 2.主线VM订阅subject信号,就可以接收到信号
+ 3.主线VM在把信号转交给目标视图VM
+ */
 
 #import "ZHDataBindViewModel.h"
 
 @interface ZHDataBindViewModel()
-@property (nonatomic,strong) RACSignal *textSignal;
 @end
 @implementation ZHDataBindViewModel
+//1.懒加载子视图
 -(ZHHotelTitleViewModel *)hotelTitleVM{
     if (_hotelTitleVM == nil) {
         _hotelTitleVM = [[ZHHotelTitleViewModel alloc] init];
@@ -43,27 +49,33 @@
     }
     return _resultVM ;
 }
+
+//2.初始化
 -(instancetype)init{
     if (self = [super init]) {
         [self setup];
     }
     return self;
 }
+
 -(void)setup{
     //1. 输入逻辑
-    [self combineHotelTitleViewModel:self.hotelTitleVM nameInputViewModel:self.nameInputVM phoneInputViewModel:self.PhoneInputVM];
-    RAC(self.resultVM,resultStr) = self.textSignal;
+  RAC(self.resultVM,resultStr) = [self combineHotelTitleViewModel:self.hotelTitleVM nameInputViewModel:self.nameInputVM phoneInputViewModel:self.PhoneInputVM];
     
     //2. 视图VM间的通信!!!!!!
     @weakify(self);
+    //提示不能为nil
     [self.orderDetailVM.submitSubject subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if (!self.nameInputVM.inputText) {
             self.resultVM.resultStr = @"入住人不能为空!";
         }else if (!self.PhoneInputVM.inputText){
             self.resultVM.resultStr = @"手机号不能为空!";
+        }else{
+            //网络请求提交数据啦!!!!!
         }
     }];
+    //清除输入
     [self.orderDetailVM.clearSubject subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         self.nameInputVM.inputText = nil;
@@ -72,10 +84,12 @@
     
 }
 
--(void)combineHotelTitleViewModel:(ZHHotelTitleViewModel *)hotelTitleVM nameInputViewModel:(ZHNameInputViewModel *)nameInputVM phoneInputViewModel:(ZHPhoneInputViewModel *)phoneInputVM{
+-(RACSignal *)combineHotelTitleViewModel:(ZHHotelTitleViewModel *)hotelTitleVM nameInputViewModel:(ZHNameInputViewModel *)nameInputVM phoneInputViewModel:(ZHPhoneInputViewModel *)phoneInputVM{
+    //需要联合的信号
     NSArray *signals = @[hotelTitleVM.titleSignal,nameInputVM.inputChannel,phoneInputVM.inputChannel];
- _textSignal = [RACSignal combineLatest:signals reduce:^id _Nullable(NSString *title ,NSString *name, NSString *phone){
-     return [NSString stringWithFormat:@"%@ 将入住 %@\n联系电话:%@",name?:@"",title,phone?:@""];
+    //联合在聚合,返回聚合后的信号
+    return [RACSignal combineLatest:signals reduce:^id _Nullable(NSString *title ,NSString *name, NSString *phone){
+        return [NSString stringWithFormat:@"%@ 将入住 %@\n联系电话:%@",name?:@"",title,phone?:@""];
     }];
 }
 
