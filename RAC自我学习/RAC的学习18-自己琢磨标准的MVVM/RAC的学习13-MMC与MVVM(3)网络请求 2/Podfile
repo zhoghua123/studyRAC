@@ -1,8 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-target 'RAC的学习'do
-use_frameworks!
-pod'ReactiveObjC'
-pod 'AFNetworking'
-pod 'MJExtension'
-end
