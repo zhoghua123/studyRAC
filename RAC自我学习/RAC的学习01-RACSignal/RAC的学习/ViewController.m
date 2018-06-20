@@ -54,7 +54,8 @@
 }
 
 - (void)test {
-    //1.创建信号
+    
+    //1.创建信号（多态：这里返回的信号其实是RACSignal的子类RACDynamicSignal）
     RACSignal *signal  = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         //didSubscribe:当前block
         // block调用时刻：每当有订阅者订阅信号，就会调用block。
